@@ -12,23 +12,23 @@ $conn =  mysqli_connect('localhost', 'root', 'admin', 'uas_platform');
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-if($conn){
-  echo "koneksi berhasil unpam";
-}
 
-$mysql = "INSERT INTO users (id, namadep, namabel, username, password, role, usia, jk) VALUES ('"
-    . $_POST['id'] ."','"
-    . $_POST['namadep'] ."','"
-    . $_POST['namabel'] ."','"
-    . $_POST['username'] ."','"
-    . $_POST['password'] ."','"
-    . $_POST['role'] ."','"
-    . $_POST['usia'] ."','"
-    . $_POST['jk']. "');";
+$mysql = "UPDATE users SET namadep = '".$_POST['namadep'].
+    "' , namabel = '" .$_POST['namabel'].
+    "' , username = '" .$_POST['username'].
+    "' , password = '" .$_POST['password'].
+    "' , role = '" .$_POST['role'].
+    "' , usia = '" .$_POST['usia'].
+    "' , jk = '" .$_POST['jk'].
+    // "' , email = '" .$_POST['email'].
+    // "' , notel = '" .$_POST['notel'].
+    "' WHERE id = " .$_POST['id'].
+    ";";
 
+    echo $mysql;
     if ($conn->query($mysql) === TRUE) {
         echo "<script>
-        alert('Selamat, anda telah terdaftar');
+        alert('Selamat, Data anda telah terupdate');
         window.location.href='dashboardAdmin.php';
         </script>";
       } else {

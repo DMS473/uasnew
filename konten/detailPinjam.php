@@ -1,15 +1,24 @@
-<!-- <?php
-    
+<?php  
     include "koneksi.php";
+    $id = $_GET['id'];
+    $query = "SELECT * FROM users where id = ". $_GET["id"]. ";";
+    // $query = "SELECT * FROM register";
+    // echo $query;
+    $sql = mysqli_query($conn, $query);
 
-?> -->
+    $result = mysqli_fetch_assoc($sql);
+    // var_dump($result);
+
+
+    // echo "text : " . $_GET['id'];
+?>
+
 
 <!-- ini halaman home -->
-<form action="registerUser.php" method="post">
+<form action="updateUser.php" method="post">
     <p>&nbsp;</p>
     <div align="center" class="style1">
-        <!-- ini halaman home -->
-        <p>REGISTER USER</p>
+        <p>EDIT</p>
     </div>
     <!-- cari Member
     <from action="module/cari.php" method="get"> 
@@ -18,26 +27,29 @@
     </form><br /> -->
 
     <table width="496" border="0" align="center">
-        <tr>
-            <td width="163">ID / NIM :</td>
-            <td width="317"><input type="text" name="id" /></td>
-        </tr>
+    <?php
+        // while($result = mysqli_fetch_assoc($sql)){
+    ?>
         <tr>
             <td width="163">Nama depan :</td>
-            <td width="317"><input type="text" name="namadep" /></td>
+            <td width="317"><input type="text" name="namadep" value="<?php echo $result['namadep']; ?>" /></td>
         </tr>
         <tr>
             <td>Nama Belakang :</td>
-            <td><input type="text" name="namabel" /></td>
+            <td><input type="text" name="namabel" value="<?php echo $result['namabel']; ?>" /></td>
         </tr>
         <tr>
             <td>Username :</td>
-            <td><input type="text" name="username" /></td>
+            <td><input type="text" name="username" value="<?php echo $result['username']; ?>"/></td>
         </tr>
         <tr>
             <td>Password :</td>
-            <td><input type="password" name="password" /></td>
+            <td><input type="password" name="password" value="<?php echo $result['password']; ?>"/></td>
         </tr>
+        <!-- <tr>
+            <td>Usia :</td>
+            <td><input type="text" name="usia" value="<?php echo $result['usia']; ?>"/></td>
+        </tr> -->
         <tr>
             <td>Role :</td>
             <td>
@@ -68,7 +80,7 @@
         </tr>
         <tr>
             <td>Usia :</td>
-            <td><input type="text" name="usia" /></td>
+            <td><input type="text" name="usia" value="<?php echo $result['usia']; ?>"/></td>
         </tr>
         <tr>
             <td>Jenis Kelamin :</td>
@@ -85,20 +97,20 @@
             </td>
         </tr>
         <!-- <tr>
-            <td>Tempat Lahir :</td>
-            <td><input type="text" name="ttl" /></td>
-        </tr>
-        <tr>
-            <td>Email :</td>
-            <td><input type="text" name="email" /></td>
-        </tr>
-        <tr>
             <td>Nomor Telepon :</td>
-            <td><input type="text" name="notel" /></td>
-        </tr> -->
+            <td><input type="text" name="notel" value="<?php echo $result['notel']; ?>"/></td>
+        </tr>
+        <tr>
+            <!-- <td>id :</td> -->
+            <td><input type="hidden" name="id" value="<?php echo $result['id']; ?>"/></td>
+        </tr>
         <tr>
             <td>&nbsp;</td>
-            <td><input type="submit" value="input" /></td>
+            <td><input type="submit" value="update" /></td>
         </tr>
+
+    <?php
+        // }
+    ?>
     </table>
 </form>

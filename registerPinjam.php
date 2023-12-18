@@ -16,15 +16,15 @@ if($conn){
   echo "koneksi berhasil unpam";
 }
 
-$mysql = "INSERT INTO users (id, namadep, namabel, username, password, role, usia, jk) VALUES ('"
-    . $_POST['id'] ."','"
-    . $_POST['namadep'] ."','"
-    . $_POST['namabel'] ."','"
-    . $_POST['username'] ."','"
-    . $_POST['password'] ."','"
-    . $_POST['role'] ."','"
-    . $_POST['usia'] ."','"
-    . $_POST['jk']. "');";
+$t=time();
+$d=date("Y-m-d",$t);
+// $f=strtotime($d);
+
+$mysql = "INSERT INTO pinjams (user_id, book_id, start) VALUES ('"
+    . $_POST['user_id'] ."','"
+    // . $f ."','"
+    . $_POST['book_id'] ."','"
+    . $d. "');";
 
     if ($conn->query($mysql) === TRUE) {
         echo "<script>
@@ -32,6 +32,7 @@ $mysql = "INSERT INTO users (id, namadep, namabel, username, password, role, usi
         window.location.href='dashboardAdmin.php';
         </script>";
       } else {
+
         echo "Error: " . $sql . "<br>" . $conn->error;
       }
 

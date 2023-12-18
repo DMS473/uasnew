@@ -1,56 +1,45 @@
-<!-- ini halaman home -->
-<form action="register.php" method="post">
-    <p>&nbsp;</p>
-    <div align="center" class="style1">
-        <!-- ini halaman home -->
-        <p>REGISTER</p>
-    </div>
-    <!-- cari Member
-    <from action="module/cari.php" method="get"> 
-    <input type="text" name="username" placeholder="ketikan username" />
-    <input type="submit" value="cari" />
-    </form><br /> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Lihat Data</title>
+  </head>
+  <body>
+    <h2 class="text-primary">Daftar Buku</h2> <br>
+      
 
-    <table width="496" border="0" align="center">
-        <tr>
-            <td width="163">Nama depan :</td>
-            <td width="317"><input type="text" name="namadep" /></td>
-        </tr>
-        <tr>
-            <td>Nama Belakang :</td>
-            <td><input type="text" name="namabel" /></td>
-        </tr>
-        <tr>
-            <td>Username :</td>
-            <td><input type="text" name="username" /></td>
-        </tr>
-        <tr>
-            <td>Password :</td>
-            <td><input type="password" name="password" /></td>
-        </tr>
-        <tr>
-            <td>Usia :</td>
-            <td><input type="text" name="usia" /></td>
-        </tr>
-        <tr>
-            <td>Jenis Kelamin :</td>
-            <td><input type="text" name="jk" /></td>
-        </tr>
-        <tr>
-            <td>Tempat Tanggal Lahir :</td>
-            <td><input type="text" name="ttl" /></td>
-        </tr>
-        <tr>
-            <td>Email :</td>
-            <td><input type="text" name="email" /></td>
-        </tr>
-        <tr>
-            <td>Nomor Telepon :</td>
-            <td><input type="text" name="notel" /></td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td><input type="submit" value="input" /></td>
-        </tr>
-    </table>
-</form>
+    <div class="container">
+        <div class="row">
+     
+
+    <?php
+//ambil file koneksi
+include "koneksi.php";
+
+// masukan koneksi DB
+$select = mysqli_query($conn, "select * FROM books");
+
+    
+while ($buff = mysqli_fetch_array($select)) { ?>
+    <div class="col-md-4 mb-5">
+    <div class="card text-white bg-info mb-3" style="width: 19rem;">
+        <img class="card-img-top" src="<?php echo $buff['image']; ?>" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title"><?php echo $buff['judul']; ?></h5>
+            <p class="card-text"><?php echo $buff['id']; ?></p>
+            <!-- <a href="#" class="btn btn-primary">Pinjam</a> -->
+        </div>
+    </div>
+    </div>
+    
+
+  <?php
+}
+;
+?>
+     </div>
+     </div>
+<br>
+      <a href="index.php"><---- Kembali ke Index</a>
+  </body>
+</html>

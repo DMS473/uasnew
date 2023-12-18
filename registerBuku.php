@@ -16,15 +16,11 @@ if($conn){
   echo "koneksi berhasil unpam";
 }
 
-$mysql = "INSERT INTO users (id, namadep, namabel, username, password, role, usia, jk) VALUES ('"
+$mysql = "INSERT INTO books (id, judul, image, stock) VALUES ('"
     . $_POST['id'] ."','"
-    . $_POST['namadep'] ."','"
-    . $_POST['namabel'] ."','"
-    . $_POST['username'] ."','"
-    . $_POST['password'] ."','"
-    . $_POST['role'] ."','"
-    . $_POST['usia'] ."','"
-    . $_POST['jk']. "');";
+    . $_POST['judul'] ."','"
+    . $_POST['image'] ."','"
+    . $_POST['stock']. "');";
 
     if ($conn->query($mysql) === TRUE) {
         echo "<script>

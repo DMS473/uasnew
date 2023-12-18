@@ -7,17 +7,18 @@
     <title>Perpus UIN</title>
 </head>
 <body>
-    <div class="container">
+    
         <!-- <h1>Perpus UIN</h1> -->
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
               <!-- <a class="navbar-brand" href="#"> -->
-                 <img src="UIN1.jpg" width="60" height="60" alt="">
+                 <img src="images/UIN1.jpg" width="60" height="60" alt="">
               <!-- </a>     -->
             
             <!-- <a class="navbar-brand" href="#">Hidden brand</a> -->
@@ -26,7 +27,7 @@
                 <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="?module=cari#">Search</a>
+                <a class="nav-link" href="?module=search#">Search</a>
               </li>   
               <li class="nav-item">
                 <a class="nav-link" href="?module=login#">Login</a>
@@ -37,15 +38,21 @@
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form> -->
           </div>
+</div>
         </nav>
 
-        <div class="page">
-            <h2>Buat Carrousel</h2>
+        <div class="container">
+            <?php if(isset($_GET['module']))
+                // str_replace("../","",$_GET['module']);
+                include "konten/$_GET[module].php";
+            else
+                include "konten/home.php";?>
+                
         </div>
 
         <div id="clear"></div>
 
-        <div id="footer">
+        <div id="footer" class="container">
             <p>&copy; 2010</p>
         </div>
 

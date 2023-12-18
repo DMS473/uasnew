@@ -127,12 +127,14 @@ img{
         <h3>navigasi</h3>
         <ul id="navmenu">
             <li><a href="dashboardAdmin.php" class="selected">Home</a></li>
-            <li><a href="?module=lihatBuku#pos">view Buku</a></li>
-            <li><a href="?module=cariBuku#pos">search Buku</a></li>
+            <li><a href="?module=viewBuku#pos">view Buku</a></li>
+            <li><a href="?module=searchBuku#pos">search Buku</a></li>
             <li><a href="?module=insertBuku#pos">Insert Buku</a></li>
             <li><a href="?module=viewUser#pos">view User</a></li>
             <li><a href="?module=searchUser#pos">search User</a></li>
             <li><a href="?module=insertUser#pos">Insert User</a></li>
+            <li><a href="?module=viewPinjam#pos">View Pinjam</a></li>
+            <li><a href="?module=insertPinjam#pos">Insert Pinjam</a></li>
         </ul>
         <br>
         <!-- <div id="login">
