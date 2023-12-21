@@ -44,7 +44,7 @@ while ($buff = mysqli_fetch_array($select)) { ?>
           <td width="50"><?php echo $buff['jk']; ?></td> -->
           <!-- <td width="100"><?php echo $buff['email']; ?></td>
           <td width="100"><?php echo $buff['notel']; ?></td> -->
-          <td width="40"><a href="?id=<?php echo $buff['id']; ?>&module=edit#pos">edit</a></td>
+          <td width="40"><a href="?id=<?php echo $buff['id']; ?>&module=editBuku#pos">edit</a></td>
           <td width="40"><a href="deleteBuku.php?id=<?php echo $buff['id']; ?>">hapus</a></td>
         </tr>
       </table>

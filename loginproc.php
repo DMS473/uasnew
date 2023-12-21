@@ -20,6 +20,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql1 = "SELECT * FROM users WHERE username = '$myusername' and password = '$mypassword'";
     $result = mysqli_query($conn, $sql1);
+    // $nim = $result['id'];
 
     if (mysqli_num_rows($result) > 0) {
   // output data of each row
@@ -34,6 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             echo"<script>alert('Anda berhasil masuk'); 
                 window.location.href='dashboardOperator.php';</script>";
         } else {
+            $_SESSION['nim'] = $row['id'];
             echo"<script>alert('Anda berhasil masuk'); 
                 window.location.href='dashboardMhs.php';</script>";
         }
@@ -51,6 +53,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     //    $_SESSION['username'] = $myusername;
        
     //    header("location: index.php");
+        // echo $result['id'];
        echo "selamat";
         $_SESSION['username'] = $myusername;
         $_SESSION['password'] = $mypassword;

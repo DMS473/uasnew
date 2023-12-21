@@ -120,7 +120,7 @@ img{
 <body>
 <div class="container">
         <div id="header">
-            <h1 style="color: #003399;" align="center">DASHBOARD PERPUS UIN</h1>
+            <h1 style="color: #003399;" align="center">DASHBOARD ADMIN PERPUS UIN</h1>
                
         </div>
     <div id="sidebar">
@@ -154,7 +154,7 @@ img{
                 // str_replace("../","",$_GET['module']);
                 include "konten/$_GET[module].php";
             else
-                include "konten/dashboardhome.php";?>
+                include "konten/homeAdmin.php";?>
                 
         </div>
         <div id="clear"></div>

@@ -5,7 +5,7 @@
     <title>Lihat Data</title>
   </head>
   <body>
-    <h2 class="text-primary">Daftar Buku</h2> <br>
+    <h2 class="text-primary">Daftar Buku Yang Tersedia</h2> <br>
       
 
     <div class="container">
@@ -17,7 +17,7 @@
 include "koneksi.php";
 
 // masukan koneksi DB
-$select = mysqli_query($conn, "select * FROM books");
+$select = mysqli_query($conn, "select * FROM books where stock > 0");
 
     
 while ($buff = mysqli_fetch_array($select)) { ?>
