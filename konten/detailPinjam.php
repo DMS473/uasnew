@@ -20,10 +20,10 @@
 
     $haripinjam = $result['start'];
     $f=strtotime($haripinjam);
-    $d2=ceil(($f-time())/60/60/24);
+    $d2=ceil((time()-$f)/60/60/24);
     $biaya=0;
-    if($d2>3){
-        $biaya= ($d2-3)*500;
+    if($d2>4 && $d2<100){
+        $biaya= ($d2-4)*500;
     } else {
         $biaya= 0;
     }
@@ -71,7 +71,7 @@
         </tr>
         <tr>
             <td>Denda :</td>
-            <td><input type="text" name="usia" value="Rp. <?php echo $biaya; ?>" readonly/></td>
+            <td><input type="text" name="biaya1" value="Rp. <?php echo $biaya; ?>" readonly/></td>
         </tr>
         <tr>
             <td>Status :</td>
@@ -97,6 +97,7 @@
         </tr>
         <tr>
             <!-- <td>id :</td> -->
+            <td><input type="hidden" name="biaya" value="<?php echo $biaya; ?>"/></td>
             <td><input type="hidden" name="id" value="<?php echo $id1; ?>"/></td>
         </tr>
         <tr>

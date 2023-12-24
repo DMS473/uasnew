@@ -46,8 +46,17 @@ while ($buff = mysqli_fetch_array($select)) { ?>
           <td width="50"><?php echo $buff['jk']; ?></td> -->
           <!-- <td width="100"><?php echo $buff['email']; ?></td>
           <td width="100"><?php echo $buff['notel']; ?></td> -->
+          <!-- <?php 
+                if($buff['isFinished']==1){
+                    echo "<td><input type='submit' value='lunas' disabled/></td>";
+                } else {
+                    echo "<td><a href='?id=".$buff['id']."'&module=detailPinjam#pos>Detail</a></td>";
+                };
+
+            ?> -->
           <td width="40"><a href="?id=<?php echo $buff['id']; ?>&module=detailPinjam#pos">Detail</a></td>
-          <td width="40"><a href="delete.php?id=<?php echo $buff['id']; ?>">hapus</a></td>
+          
+          <td width="40"><a href="deletePinjam.php?id=<?php echo $buff['id']; ?>">hapus</a></td>
         </tr>
       </table>
 
