@@ -33,43 +33,21 @@
                 <a class="nav-link" href="?module=login#">Login</a>
               </li>
             </ul>
-    <!-- <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form> -->
           </div>
 </div>
         </nav>
-
         <div class="container">
             <?php if(isset($_GET['module']))
                 // str_replace("../","",$_GET['module']);
                 include "konten/$_GET[module].php";
             else
-                include "konten/home.php";?>
-                
+                include "konten/home.php";?>                
         </div>
-
         <div id="clear"></div>
-
         <div id="footer" class="container">
             <p>&copy; 2010</p>
         </div>
-
-
-
     </div>
-
-
-
-
-
-
-
-
-
-
-
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
